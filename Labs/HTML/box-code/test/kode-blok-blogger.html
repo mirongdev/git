@@ -1,0 +1,193 @@
+<link href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css' id='theme-link'
+    rel='stylesheet' />
+
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css' rel='stylesheet' />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css'
+    rel='stylesheet' />
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .code-container {
+        position: relative;
+        border: 0.5px solid #444;
+        border-radius: 8px;
+        max-width: 700px;
+        max-height: 300px;
+        overflow: auto;
+    }
+
+
+    .code-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #036dac;
+        color: #fff;
+        padding: 8px 16px;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .code-buttons {
+        display: flex;
+        gap: 5px;
+    }
+
+    .copy-button,
+    .darkmode-button {
+        border: none;
+        background-color: #333;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+
+    .copy-button:hover,
+    .darkmode-button:hover {
+        background-color: #555;
+    }
+
+    .copy-button:active,
+    .darkmode-button:active {
+        transform: scale(0.95);
+    }
+
+    pre {
+        margin: 0;
+        padding: 20px;
+        background: #2d2d2d;
+        color: white;
+    }
+
+    .darkmode-light {
+        background-color: #fff !important;
+        color: black !important;
+    }
+
+    .darkmode-light .copy-button,
+    .darkmode-light .darkmode-button {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .darkmode-light .copy-button:hover,
+    .darkmode-light .darkmode-button:hover {
+        background-color: #bbb;
+    }
+
+    pre[class*="language-"] {
+        margin: 0;
+    }
+</style>
+
+
+<div class="code-container">
+
+    <div class="code-header">
+        <span>CSS</span>
+        <div class="code-buttons">
+            <button class="copy-button"><i class="fas fa-copy"></i> Salin Kode</button>
+            <button class="darkmode-button"><i class="fas fa-moon"></i> Dark Mode</button>
+        </div>
+    </div>
+
+    <pre><code class="language-css">/* Sample 2 */
+body {
+background-color: #f0f0f0;
+padding: 10px;
+font-family: 'Times New Roman', serif;
+}
+    </code></pre>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    
+<!-- <script>
+    const themeLink = document.getElementById('theme-link');
+
+    // Salin kode
+    document.querySelectorAll('.copy-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const codeBlock = button.closest('.code-container').querySelector('pre code');
+            const codeText = codeBlock.innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                button.innerHTML = '<i class="fas fa-check"></i> Disalin!';
+                setTimeout(() => button.innerHTML = '<i class="fas fa-copy"></i> Salin Kode', 2000);
+            });
+        });
+    });
+
+    // Ganti mode terang/gelap
+    document.querySelectorAll('.darkmode-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const isDark = themeLink.getAttribute('href').includes('tomorrow');
+            const container = button.closest('.code-container');
+
+            if (isDark) {
+                themeLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css');
+                button.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+                container.classList.add('darkmode-light');
+            } else {
+                themeLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css');
+                button.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+                container.classList.remove('darkmode-light');
+            }
+        });
+    });
+</script> -->
+
+
+<script type='text/javascript'>
+    //<![CDATA[
+    
+    const themeLink = document.getElementById('theme-link');
+
+    // Salin kode
+    document.querySelectorAll('.copy-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const codeBlock = button.closest('.code-container').querySelector('pre code');
+            const codeText = codeBlock.innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                button.innerHTML = '<i class="fas fa-check"></i> Disalin!';
+                setTimeout(() => button.innerHTML = '<i class="fas fa-copy"></i> Salin Kode', 2000);
+            });
+        });
+    });
+
+    // Ganti mode terang/gelap
+    document.querySelectorAll('.darkmode-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const isDark = themeLink.getAttribute('href').includes('tomorrow');
+            const container = button.closest('.code-container');
+
+            if (isDark) {
+                themeLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css');
+                button.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+                container.classList.add('darkmode-light');
+            } else {
+                themeLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css');
+                button.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+                container.classList.remove('darkmode-light');
+            }
+        });
+    });
+    
+    //]]>
+</script>

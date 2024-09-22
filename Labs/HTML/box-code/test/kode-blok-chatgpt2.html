@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Copy Button for Multiple Code Blocks</title>
+
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-tomorrow.min.css'> -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-coy.min.css'>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+    <!-- CSS Styling -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style for the code block container */
+        .code-container {
+            position: relative;
+            border: 0.5px solid #444;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            margin: 20px auto;
+            max-width: 700px;
+            max-height: 300px;
+            /* Set height to see scroll */
+            overflow: auto;
+            /* Enable scrolling */
+        }
+
+        pre[class*="language-"] {
+            margin: 0;
+        }
+
+        /* Header that displays the language */
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222;
+            color: #ddd;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-family: sans-serif;
+            border-bottom: 0.5px solid #444;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            position: sticky;
+            top: 0;
+            /* Stick to the top of the container */
+            z-index: 1;
+            /* Make sure it's above the code */
+        }
+
+        /* Styling for the copy button */
+        .copy-button {
+            background-color: #333;
+            color: #ddd;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .copy-button:hover {
+            background-color: #555;
+        }
+
+        /* Smooth change when copying */
+        .copy-button.copy-success {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .copy-button svg {
+            margin-right: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .copy-button.copy-success svg {
+            transform: scale(1.2);
+        }
+
+        /* Smooth animation for the button */
+        .copy-button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Code block structure -->
+    <div class="code-container">
+        <div class="code-header">
+            <span>CSS</span>
+            <button class="copy-button" data-target="codeBlock1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="icon-sm">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z"
+                        fill="currentColor"></path>
+                </svg>Salin kode
+            </button>
+        </div>
+        <pre><code class="language-css" id="codeBlock1">
+    /* Styling for the copy button */
+    .copy-button {
+      background-color: #333;
+      color: #ddd;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+    .copy-button:hover {
+      background-color: #555;
+    }
+        </code></pre>
+    </div>
+
+    <!-- Another code block -->
+    <div class="code-container">
+        <div class="code-header">
+            <span>CSS</span>
+            <button class="copy-button" data-target="codeBlock2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="icon-sm">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z"
+                        fill="currentColor"></path>
+                </svg>Salin kode
+            </button>
+        </div>
+        <pre><code class="language-css" id="codeBlock2">/* Smooth animation for the button */
+.copy-button:active {
+transform: scale(0.98);
+}
+        </code></pre>
+    </div>
+
+    <!-- JavaScript for copy functionality -->
+    <script>
+        const copyButtons = document.querySelectorAll('.copy-button');
+
+        copyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const codeBlockId = button.getAttribute('data-target');
+                const codeBlock = document.getElementById(codeBlockId).innerText;
+
+                navigator.clipboard.writeText(codeBlock).then(() => {
+                    button.classList.add('copy-success');
+                    button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 12.5L9 16.5L19 7.5L20 9L9 19L4 14L5 12.5Z" fill="currentColor"></path></svg>Disalin!';
+                    setTimeout(() => {
+                        button.classList.remove('copy-success');
+                        button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Salin kode';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

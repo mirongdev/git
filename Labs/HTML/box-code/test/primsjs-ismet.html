@@ -1,0 +1,219 @@
+<!-- Prism.js CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" id="prism-light">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" id="prism-dark" disabled>
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+  :root {
+      --synxDot1: #f1645e;
+      --synxDot2: #eebd3e;
+      --synxDot3: #3cab4e;
+  }
+
+  /* Container for code block */
+  pre[class*="language-"] {
+      position: relative;
+      padding-top: 21px;
+      padding: 15px;
+      border-radius: 10px;
+      overflow: hidden; /* Hide overflow */
+      font-size: 12pt;
+      line-height: 1.5;
+      margin-bottom: 1.5em;
+      font-family: 'Courier New', monospace;
+      color: #fff; /* Default code color */
+      white-space: pre-wrap; /* Prevent line breaking and enable wrapping */
+      word-wrap: break-word; /* Wrap long words */
+  }
+
+  /* Header for code block */
+  .code-header {
+      display: flex;
+      justify-content: flex-end; /* Align items to the right */
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; /* Full width */
+      background: #1f212a;
+      height: 45px;
+      border-radius: 10px 10px 0 0;
+      padding: 0 10px; /* Adjust padding */
+  }
+
+  /* Decorative dots in header */
+  pre::after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      display: flex;
+      gap: 10px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--synxDot1);
+      box-shadow:
+          20px 0 0 var(--synxDot2),
+          40px 0 0 var(--synxDot3);
+  }
+
+  /* Button styles */
+  .precopy, .toggle-darkmode {
+      background-color: #323232;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      font-size: 0.8em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, opacity 0.3s;
+      margin-right: 21px;
+      opacity: 0.6;
+  }
+
+
+  .precopy {
+
+    margin-right: 5px; /* Kurangi margin untuk lebih mendekat */
+    
+}
+
+  /* Hover state for buttons */
+  .precopy:hover, .toggle-darkmode:hover {
+      opacity: 1;
+  }
+
+  /* Dark mode styles */
+  body.dark-mode {
+      background-color: #1e1e1e;
+      color: #ffffff;
+  }
+
+  body.dark-mode pre[class*="language-"] {
+      background-color: #2d2f36; /* Dark background */
+  }
+
+  code.language-css::before,
+    code.language-xml::before,
+    code.language-php-template::before,
+    code.language-javascript::before {
+        content: '</>';
+        position: absolute;
+        top: 13px;
+        left: 50%;
+        color: #fff;
+        opacity: .6;
+        z-index: 2;
+        font-size: 12px
+    }
+
+    code.language-css::before {
+        content: 'CSS'
+    }
+
+    code.language-xml::before {
+        content: 'HTML'
+    }
+
+    code.language-php-template::before {
+        content: 'XML'
+    }
+
+    code.language-javascript::before {
+        content: 'JavaScript'
+    }
+</style>
+
+<!-- Prism.js JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let preTag = document.querySelectorAll("pre");
+
+        async function copyCode(e) {
+            const t = e.srcElement;
+            const codeBlock = t.closest("pre").querySelector("code").innerText;
+            await navigator.clipboard.writeText(codeBlock);
+            t.innerText = "Kode Disalin!";
+            t.classList.add("copied");
+            setTimeout(() => {
+                t.classList.remove("copied");
+                t.innerText = "Salin Kode";
+            }, 1000);
+        }
+
+        preTag.forEach(e => {
+            if (navigator.clipboard) {
+                // Create header div
+                let header = document.createElement("div");
+                header.classList.add("code-header");
+
+                // Copy button
+                let copyButton = document.createElement("button");
+                copyButton.classList.add("precopy");
+                copyButton.innerHTML = '<i class="fas fa-copy"></i> Salin Kode';
+                copyButton.addEventListener("click", copyCode);
+                header.appendChild(copyButton);
+
+                // Dark mode button
+                let darkModeButton = document.createElement("button");
+                darkModeButton.classList.add("toggle-darkmode");
+                darkModeButton.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+                darkModeButton.addEventListener("click", function () {
+                    document.body.classList.toggle('dark-mode');
+                    const prismLight = document.getElementById('prism-light');
+                    const prismDark = document.getElementById('prism-dark');
+                    if (document.body.classList.contains('dark-mode')) {
+                        prismLight.disabled = true;
+                        prismDark.disabled = false;
+                        darkModeButton.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+                    } else {
+                        prismLight.disabled = false;
+                        prismDark.disabled = true;
+                        darkModeButton.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+                    }
+                });
+                header.appendChild(darkModeButton);
+
+                // Append header to pre
+                e.prepend(header);
+            }
+        });
+    });
+</script>
+
+<pre class="language-javascript" data-language="JavaScript">
+    <code class="language-javascript">
+// Example JavaScript Code
+        function helloWorld() {
+            console.log("Hello, World!");
+        }
+        helloWorld();
+    </code>
+</pre>
+
+
+<pre class="language-javascript line" data-language="JavaScript">
+    <code class="language-javascript">
+// Example JavaScript Code
+        function helloWorld() {
+            console.log("Hello, World!");
+        }
+        helloWorld();
+    </code>
+</pre>
+
+
+<pre class="language-javascript" data-language="JavaScript">
+    <code class="language-javascript">
+// Example JavaScript Code
+        function helloWorld() {
+            console.log("Hello, World!");
+        }
+        helloWorld();
+    </code>
+</pre>

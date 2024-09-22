@@ -1,0 +1,391 @@
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/androidstudio.css" /> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/default.min.css">
+<style id='page-skin-1' type='text/css'>
+    :root {
+
+        --synxDot1: #f1645e;
+        --synxDot2: #eebd3e;
+        --synxDot3: #3cab4e;
+    }
+
+
+
+
+
+
+
+    /* Syntax Highlighting */
+    /* pre {
+        background: #2d303e;
+        color: #cccccc;
+        position: relative;
+        border-radius: 10px;
+        padding: 25px;
+        overflow: auto;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9em;
+        white-space: pre;
+        line-height: 1.5;
+        margin-bottom: 1.5em;
+    } */
+
+
+    pre {
+
+        position: relative;
+        padding-top: 21px;
+        overflow: auto;
+        font-family: 'Courier New', monospace;
+        font-size: 12pt;
+        white-space: pre;
+        line-height: 1.5;
+        margin-bottom: 1.5em;
+
+    }
+
+
+    pre::before {
+        content: '';
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #1f212a;
+        height: 45px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    pre::after {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        display: flex;
+        gap: 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--synxDot1);
+        box-shadow:
+            20px 0 0 var(--synxDot2),
+            40px 0 0 var(--synxDot3);
+    }
+
+    code.language-css::before,
+    code.language-xml::before,
+    code.language-php-template::before,
+    code.language-javascript::before {
+        content: '</>';
+        position: absolute;
+        top: 13px;
+        left: 50%;
+        color: #fff;
+        opacity: .6;
+        z-index: 2;
+        font-size: 12px
+    }
+
+    code.language-css::before {
+        content: 'CSS'
+    }
+
+    code.language-xml::before {
+        content: 'HTML'
+    }
+
+    code.language-php-template::before {
+        content: 'XML'
+    }
+
+    code.language-javascript::before {
+        content: 'JavaScript'
+    }
+
+/* 
+    .precopy {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background-color: #323232;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        font-size: 0.8em;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .precopy:hover {
+        background-color: #555;
+    }
+
+    .precopy.copied {
+        background-color: #28a745;
+    }
+
+
+    .precopy {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        opacity: .6;
+        transition: opacity linear 0.5s;
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        top: 0;
+        background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='%23989b9f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><rect x='5.54615' y='5.54615' width='16.45385' height='16.45385' rx='4'></rect><path d='M171.33311,181.3216v-8.45385a4,4,0,0,1,4-4H183.787' transform='translate(-169.33311 -166.86775)'></path></g></svg>") 48px / 22px no-repeat;
+        color: #fff;
+        font-size: 13px;
+        border: none;
+        line-height: 2.2em;
+        border-radius: 0 4px 0 4px;
+        padding: 9px 45px 5px 8px
+    }
+
+    .precopy:hover {
+        opacity: 1
+    }
+
+    .precopy.copied {
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiBmb2N1c2FibGU9ImZhbHNlIiBkYXRhLXByZWZpeD0iZmFzIiBkYXRhLWljb249ImNoZWNrIiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtY2hlY2sgZmEtdy0xNiIgcm9sZT0iaW1nIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9IiYjMTA7ICAgIGNvbG9yOiAjMmFmZjMyOyYjMTA7Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xNzMuODk4IDQzOS40MDRsLTE2Ni40LTE2Ni40Yy05Ljk5Ny05Ljk5Ny05Ljk5Ny0yNi4yMDYgMC0zNi4yMDRsMzYuMjAzLTM2LjIwNGM5Ljk5Ny05Ljk5OCAyNi4yMDctOS45OTggMzYuMjA0IDBMMTkyIDMxMi42OSA0MzIuMDk1IDcyLjU5NmM5Ljk5Ny05Ljk5NyAyNi4yMDctOS45OTcgMzYuMjA0IDBsMzYuMjAzIDM2LjIwNGM5Ljk5NyA5Ljk5NyA5Ljk5NyAyNi4yMDYgMCAzNi4yMDRsLTI5NC40IDI5NC40MDFjLTkuOTk4IDkuOTk3LTI2LjIwNyA5Ljk5Ny0zNi4yMDQtLjAwMXoiLz48L3N2Zz4=') 68px / 17px no-repeat;
+        border: none;
+        line-height: 2.2em;
+        border-radius: 0 4px 0 4px;
+        padding: 9px 45px 5px 8px
+    } */
+
+    /* Copy Code Notification */
+    .copyCode span {
+        position: fixed;
+        left: 24px;
+        bottom: 10px;
+        background: #323232;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        padding: 13px 24px;
+        border-radius: 5px;
+        box-shadow: 0 5px 35px rgba(149, 157, 165, 0.3);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        z-index: 9999;
+    }
+
+
+    .precopy {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background-color: #323232;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center; /* Align icon with text */
+    gap: 5px; /* Space between icon and text */
+}
+
+.precopy:hover {
+        opacity: 1
+    }
+
+.precopy::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='%23989b9f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><rect x='5.54615' y='5.54615' width='16.45385' height='16.45385' rx='4'></rect><path d='M171.33311,181.3216v-8.45385a4,4,0,0,1,4-4H183.787' transform='translate(-169.33311 -166.86775)'></path></g></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+.precopy.copied::before {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiBmb2N1c2FibGU9ImZhbHNlIiBkYXRhLXByZWZpeD0iZmFzIiBkYXRhLWljb249ImNoZWNrIiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtY2hlY2sgZmEtdy0xNiIgcm9sZT0iaW1nIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9IiYjMTA7ICAgIGNvbG9yOiAjMmFmZjMyOyYjMTA7Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xNzMuODk4IDQzOS40MDRsLTE2Ni40LTE2Ni40Yy05Ljk5Ny05Ljk5Ny05Ljk5Ny0yNi4yMDYgMC0zNi4yMDRsMzYuMjAzLTM2LjIwNGM5Ljk5Ny05Ljk5OCAyNi4yMDctOS45OTggMzYuMjA0IDBMMTkyIDMxMi42OSA0MzIuMDk1IDcyLjU5NmM5Ljk5Ny05Ljk5NyAyNi4yMDctOS45OTcgMzYuMjA0IDBsMzYuMjAzIDM2LjIwNGM5Ljk5NyA5Ljk5NyA5Ljk5NyAyNi4yMDYgMCAzNi4yMDRsLTI5NC40IDI5NC40MDFjLTkuOTk4IDkuOTk3LTI2LjIwNyA5Ljk5Ny0zNi4yMDQtLjAwMXoiLz48L3N2Zz4=');
+}
+
+</style>
+
+<style>
+    /**
+    * Highlight.js
+    */
+    table.hljs-ln {
+        border-collapse: unset;
+        max-width: unset;
+        font-size: unset;
+        margin-bottom: unset;
+        width: unset
+    }
+
+    table.hljs-ln td,
+    table.hljs-ln th {
+        border: unset;
+        padding: unset;
+        word-break: unset
+    }
+
+    table.hljs-ln tr:nth-child(even) {
+        background-color: unset;
+    }
+
+    table.hljs-ln tr:hover {
+        background-color: unset;
+    }
+
+    table.hljs-ln th {
+        padding-top: unset;
+        padding-bottom: unset;
+        text-align: unset;
+        background-color: unset;
+        color: unset;
+    }
+
+    table.hljs-ln th a {
+        color: unset;
+        border-bottom: unset;
+    }
+
+    table.hljs-ln th a:hover {
+        text-decoration: unset;
+        color: unset;
+        border-bottom: unset;
+    }
+
+    /* 
+    * hljs monokai 
+    * https://cdnjs.com/libraries/highlight.js/
+    */
+    .hljs-ln-numbers {
+        -webkit-touch-callout: none !important;
+        -webkit-user-select: none !important;
+        -khtml-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+        text-align: center !important;
+        color: #ccc !important;
+        border-right: 1px solid #CCC !important;
+        vertical-align: top !important;
+        padding-right: 5px !important;
+        /* your custom style here */
+    }
+
+    /* for block of code */
+    .hljs-ln-code {
+        padding-left: 10px !important;
+    }
+
+    .hljs {
+        display: block;
+        overflow-x: auto;
+        padding: 0.5em;
+        background: #272822;
+        color: #ddd;
+    }
+
+    .hljs-tag,
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-literal,
+    .hljs-strong,
+    .hljs-name {
+        color: #f92672;
+    }
+
+    .hljs-code {
+        color: #66d9ef;
+    }
+
+    .hljs-class .hljs-title {
+        color: white;
+    }
+
+    .hljs-attribute,
+    .hljs-symbol,
+    .hljs-regexp,
+    .hljs-link {
+        color: #bf79db;
+    }
+
+    .hljs-string,
+    .hljs-bullet,
+    .hljs-subst,
+    .hljs-title,
+    .hljs-section,
+    .hljs-emphasis,
+    .hljs-type,
+    .hljs-built_in,
+    .hljs-builtin-name,
+    .hljs-selector-attr,
+    .hljs-selector-pseudo,
+    .hljs-addition,
+    .hljs-variable,
+    .hljs-template-tag,
+    .hljs-template-variable {
+        color: #a6e22e;
+    }
+
+    .hljs-comment,
+    .hljs-quote,
+    .hljs-deletion,
+    .hljs-meta {
+        color: #75715e;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-literal,
+    .hljs-doctag,
+    .hljs-title,
+    .hljs-section,
+    .hljs-type,
+    .hljs-selector-id {
+        font-weight: bold;
+    }
+</style>
+
+<pre>
+ <code>function name() {
+     console.log("output")
+   }
+ </code>
+ </pre>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.6.0/highlightjs-line-numbers.min.js"></script>
+
+
+<script>
+    hljs.highlightAll(); // initialize highlighting
+    hljs.initLineNumbersOnLoad(); // apply line numbering
+</script>
+
+<script>/*<![CDATA[*/
+    let preTag = document.querySelectorAll("pre");
+    async function copyCode(e) {
+        const t = e.srcElement;
+        t.innerText = "Kode Disalin!";
+        let o = t.parentElement.querySelector("code").innerText;
+        await navigator.clipboard.writeText(o), t.classList.add("copied"), setTimeout((() => {
+            t.classList.remove("copied"), t.innerText = "Salin Kode"
+        }), 1e3)
+    }
+    preTag.forEach((e => {
+        if (navigator.clipboard) {
+            let t = document.createElement("button");
+            t.classList.add("precopy"), t.innerText = "Salin Kode", t.addEventListener("click", copyCode), e.appendChild(t)
+        }
+    }));
+    /*]]>*/</script>

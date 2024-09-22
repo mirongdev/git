@@ -1,0 +1,418 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/androidstudio.css" />
+<style>
+    :root {
+        --synxDot1: #f1645e;
+        --synxDot2: #eebd3e;
+        --synxDot3: #3cab4e;
+    }
+
+    /* Copy Code*/
+    .copyCode span {
+        position: fixed;
+        left: 24px;
+        bottom: -70px;
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        z-index: 99981;
+        background: #323232;
+        color: rgba(255, 255, 255, .8);
+        font-size: 14px;
+        font-family: inherit;
+        border-radius: 3px;
+        padding: 13px 24px;
+        box-shadow: 0 5px 35px rgba(149, 157, 165, .3);
+        opacity: 0;
+        transition: all .1s ease;
+        animation: slideinwards 2s ease forwards;
+        -webkit-animation: slideinwards 2s ease forwards
+    }
+
+    @media screen and (max-width:500px) {
+        .copyCode span {
+            margin-bottom: 20px;
+            left: 20px;
+            right: 20px;
+            font-size: 13px
+        }
+    }
+
+    @keyframes slideinwards {
+        0% {
+            opacity: 0
+        }
+
+        20% {
+            opacity: 1;
+            bottom: 0
+        }
+
+        50% {
+            opacity: 1;
+            bottom: 0
+        }
+
+        80% {
+            opacity: 1;
+            bottom: 0
+        }
+
+        100% {
+            opacity: 0;
+            bottom: -70px;
+            visibility: hidden
+        }
+    }
+
+    @-webkit-keyframes slideinwards {
+        0% {
+            opacity: 0
+        }
+
+        20% {
+            opacity: 1;
+            bottom: 0
+        }
+
+        50% {
+            opacity: 1;
+            bottom: 0
+        }
+
+        80% {
+            opacity: 1;
+            bottom: 0
+        }
+
+        100% {
+            opacity: 0;
+            bottom: -70px;
+            visibility: hidden
+        }
+    }
+
+    .darkMode .copyCode span {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, .2)
+    }
+
+    .h-400 {
+        max-height: 400px;
+        overflow: auto
+    }
+
+    /* Font: Source code, Fira Mono(Latin) by Google */
+    @font-face {
+        font-family: 'Fira Mono';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/firamono/v14/N0bX2SlFPv1weGeLZDtgJv7S.woff2) format('woff2'; ), url(https://fonts.gstatic.com/s/firamono/v14/N0bX2SlFPv1weGeLZDtQIg.woff) format('woff');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+
+    /* Syntax */
+    /* pre {
+        background: #2d303e;
+        color: #cccccc;
+        direction: ltr;
+        position: relative;
+        border-radius: 3px;
+        overflow: hidden;
+        font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        display: block;
+        font-size: .8em;
+        border-radius: 10px;
+
+        -moz-tab-size: 2;
+        tab-size: 2;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+
+        direction: ltr;
+        white-space: pre;
+        padding-top: 30px;
+    } */
+
+   /* Syntax */
+   pre {
+    background: #282b2e;/*background: #2d303e;*/
+    
+    font-size: .8em;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  padding-top: 45px;
+}
+
+    code {
+        display: inline;
+        padding: 5px;
+        font-size: .85em;
+        line-height: 1.8em;
+        font-family: 'Fira Mono', Consolas, Monaco, Lucida Console;
+    }
+
+    pre code,
+    pre .line-number {
+        font-size: .95em;
+        background: none;
+        padding: 0;
+        display: block;
+        padding: 0.5em;
+        overflow-x: auto
+    }
+
+    pre[class*="language-"]::before {
+        content: '.';
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #1f212a;
+        color: #1f212a;
+        font-size: 12px;
+        padding: 0 18px;
+        z-index: 2;
+        line-height: 45px;
+    }
+
+    pre[class*="language-"]::after {
+        --w: 10px;
+        --g: 6px;
+        --t: 15px;
+        --p: 12px;
+        --e: 2px;
+        --m: calc(var(--w) + var(--g));
+        --r: -1;
+        content: '';
+        position: absolute;
+        top: 0;
+        inset-inline-start: 0;
+        font-size: 12px;
+        line-height: 40px;
+        color: inherit;
+        width: var(--w);
+        height: var(--w);
+        margin-inline-start: calc((var(--w) * 3) + (var(--g) * 3) + var(--p));
+        border-radius: 99px;
+        box-shadow: calc(var(--m) * 3 * var(--r)) var(--t) 0 var(--synxDot1), calc(var(--m) * 2 * var(--r)) var(--t) 0 var(--synxDot2), calc(var(--m) * 1 * var(--r)) var(--t) 0 var(--synxDot3);
+        overflow: visible;
+        z-index: 2;
+    }
+
+
+
+    /* Header for code block */
+   /* pre[class*="language-"]::before {
+    content: '';
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1f212a;
+    height: 35px; 
+    border-radius: 10px 10px 0 0;
+    } */
+
+    
+    /* Decorative dots in header */
+    /* pre[class*="language-"]::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    display: flex;
+    gap: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--synxDot1);
+    box-shadow: 20px 0 0 var(--synxDot2), 40px 0 0 var(--synxDot3);
+} */
+
+
+
+
+    code.language-css::before,
+    code.language-xml::before,
+    code.language-php-template::before,
+    code.language-javascript::before {
+        content: '</>';
+        position: absolute;
+        top: 13px;
+        left: 50%;
+        color: #fff;
+        opacity: .6;
+        z-index: 2;
+        font-size: 12px
+    }
+
+    code.language-css::before {
+        content: 'CSS'
+    }
+
+    code.language-xml::before {
+        content: 'HTML'
+    }
+
+    code.language-php-template::before {
+        content: 'XML'
+    }
+
+    code.language-javascript::before {
+        content: 'JavaScript'
+    }
+
+    pre .line-number {
+        font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        display: block;
+        font-size: .95em;
+        line-height: 1.8em;
+    }
+
+    pre .line-number {
+        float: left;
+        margin: 0 1em 0 -1em;
+        color: #8b8c92;
+        border-right: 1px solid #64656e;
+        text-align: right;
+        min-width: 2.5em;
+    }
+
+    pre.line-number::before {
+        content: 'CSS';
+        border-right: 1px solid #64656e;
+        display: block;
+        height: 50px
+    }
+
+    pre .line-number span {
+        display: block;
+        padding: 0 .5em 0 1em;
+    }
+
+    pre .line-number span:nth-child(even) {
+        background-color: #262936
+    }
+
+    pre .cl {
+        display: block;
+        clear: both;
+    }
+
+    pre {
+        position: relative
+    }
+
+    .precopy {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        opacity: .6;
+        transition: opacity linear 0.5s;
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        top: 0;
+        background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='%23989b9f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><rect x='5.54615' y='5.54615' width='16.45385' height='16.45385' rx='4'></rect><path d='M171.33311,181.3216v-8.45385a4,4,0,0,1,4-4H183.787' transform='translate(-169.33311 -166.86775)'></path></g></svg>") 48px / 22px no-repeat;
+        color: #fff;
+        font-size: 13px;
+        border: none;
+        line-height: 2.2em;
+        border-radius: 0 4px 0 4px;
+        padding: 9px 45px 5px 8px
+    }
+
+    .precopy:hover {
+        opacity: 1
+    }
+
+    .precopy.copied {
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiBmb2N1c2FibGU9ImZhbHNlIiBkYXRhLXByZWZpeD0iZmFzIiBkYXRhLWljb249ImNoZWNrIiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtY2hlY2sgZmEtdy0xNiIgcm9sZT0iaW1nIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9IiYjMTA7ICAgIGNvbG9yOiAjMmFmZjMyOyYjMTA7Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xNzMuODk4IDQzOS40MDRsLTE2Ni40LTE2Ni40Yy05Ljk5Ny05Ljk5Ny05Ljk5Ny0yNi4yMDYgMC0zNi4yMDRsMzYuMjAzLTM2LjIwNGM5Ljk5Ny05Ljk5OCAyNi4yMDctOS45OTggMzYuMjA0IDBMMTkyIDMxMi42OSA0MzIuMDk1IDcyLjU5NmM5Ljk5Ny05Ljk5NyAyNi4yMDctOS45OTcgMzYuMjA0IDBsMzYuMjAzIDM2LjIwNGM5Ljk5NyA5Ljk5NyA5Ljk5NyAyNi4yMDYgMCAzNi4yMDRsLTI5NC40IDI5NC40MDFjLTkuOTk4IDkuOTk3LTI2LjIwNyA5Ljk5Ny0zNi4yMDQtLjAwMXoiLz48L3N2Zz4=') 68px / 17px no-repeat;
+        border: none;
+        line-height: 2.2em;
+        border-radius: 0 4px 0 4px;
+        padding: 9px 45px 5px 8px
+    }
+</style>
+
+<style>
+    .hljs {
+
+  background: #282b2e;
+ 
+}
+
+    .hljs-ln td {
+
+        padding-left: 13px !important;
+    }
+</style>
+<pre><code > ... kode HTML (yang sudah di`escape`) di sini ... </code></pre>
+<pre
+    class="line-numbers language-javascript"><code data-language="JavaScript"> ... kode HTML (yang sudah di`escape`) di sini ... </code></pre>
+
+
+
+
+<pre class="line-numbers language-javascript" data-language="JavaScript">
+    <code class="language-javascript">// Example JavaScript Code
+      function helloWorld() {
+          console.log("Hello, World!");
+      }
+      helloWorld();
+    </code>
+  </pre>
+
+
+
+  demo official
+  <pre class="language-css"><code class="language-*">p { color: red; }</code></pre>
+  <pre class="language-css line-numbers"><code class="language-*">p { color: red; }
+
+  </code></pre>
+  <pre class="language-css"><code class="language-*">
+    p { color: red; }
+  </code></pre>
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js/dist/highlightjs-line-numbers.min.js"></script> -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+
+
+<script>
+    hljs.highlightAll(); // initialize highlighting
+    hljs.initLineNumbersOnLoad(); // apply line numbering
+</script>
+
+
+<script>/*<![CDATA[*/
+    let preTag = document.querySelectorAll("pre");
+    async function copyCode(e) {
+        const t = e.srcElement;
+        t.innerText = "Copied!";
+        let o = t.parentElement.querySelector("code").innerText;
+        await navigator.clipboard.writeText(o), t.classList.add("copied"), setTimeout((() => {
+            t.classList.remove("copied"), t.innerText = "Copy"
+        }), 1e3)
+    }
+    preTag.forEach((e => {
+        if (navigator.clipboard) {
+            let t = document.createElement("button");
+            t.classList.add("precopy"), t.innerText = "Copy", t.addEventListener("click", copyCode), e.appendChild(t)
+        }
+    }));
+    /*]]>*/</script>

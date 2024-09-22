@@ -1,0 +1,185 @@
+<style id='page-skin-1' type='text/css'><!--
+
+    :root{
+   
+    --synxDot1: #f1645e;
+    --synxDot2: #eebd3e;
+    --synxDot3: #3cab4e;
+    }</style>
+<style>
+
+    /* Copy Code*/
+    .copyCode span{position:fixed;left:24px;bottom:-70px;display:inline-flex;align-items:center;text-align:center;justify-content:center;margin-bottom:20px;z-index:99981;background:#323232;color:rgba(255,255,255,.8);font-size:14px;font-family:inherit;border-radius:3px;padding:13px 24px; box-shadow:0 5px 35px rgba(149,157,165,.3);opacity:0;transition:all .1s ease;animation:slideinwards 2s ease forwards;-webkit-animation:slideinwards 2s ease forwards}
+    @media screen and (max-width:500px){.copyCode span{margin-bottom:20px;left:20px;right:20px;font-size:13px}}
+    @keyframes slideinwards{0%{opacity:0}20%{opacity:1;bottom:0}50%{opacity:1;bottom:0}80%{opacity:1;bottom:0}100%{opacity:0;bottom:-70px;visibility:hidden}}
+    @-webkit-keyframes slideinwards{0%{opacity:0}20%{opacity:1;bottom:0}50%{opacity:1;bottom:0}80%{opacity:1;bottom:0}100%{opacity:0;bottom:-70px;visibility:hidden}}
+    .darkMode .copyCode span{box-shadow:0 10px 40px rgba(0,0,0,.2)}
+    .h-400 {max-height:400px;overflow:auto}
+    /* Font: Source code, Fira Mono(Latin) by Google */
+    
+    /* Syntax */
+    pre {background:#2d303e;color:#cccccc; direction: ltr;position:relative;border-radius:3px;overflow:hidden;font-family:SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;display:block;font-size:.8em;border-radius:10px;padding:55px 12px 12px; -moz-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none; overflow:auto;direction:ltr;white-space:pre}
+    code{display:inline;padding:5px;font-size:.85em;line-height:1.8em;font-family:'Fira Mono', Consolas,Monaco,Lucida Console;}
+    pre code, pre .line-number{font-size:.95em;background:none;padding:0;display:block;padding:0.5em;overflow-x:auto}
+    pre::before{content:'.';display:flex;position:absolute;left:0;top:0;width:100%;background:#1f212a;color:#1f212a;font-size:12px;padding:0 18px;z-index:2;line-height:45px;}
+    
+
+    pre::after {
+    --w: 10px;
+    --g: 6px;
+    --t: 15px;
+    --p: 12px;
+    --r: -1;
+    --dot-spacing: calc(var(--w) + var(--g)); /* Jarak antar titik */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0; /* Atur sesuai kebutuhan */
+    font-size: 12px;
+    width: var(--w);
+    height: var(--w);
+    margin-left: calc((var(--w) * 3) + (var(--g) * 3) + var(--p));
+    border-radius: 50%;
+    box-shadow: 
+        calc(var(--dot-spacing) * 3 * var(--r)) var(--t) 0 var(--synxDot1),
+        calc(var(--dot-spacing) * 2 * var(--r)) var(--t) 0 var(--synxDot2),
+        calc(var(--dot-spacing) * 1 * var(--r)) var(--t) 0 var(--synxDot3);
+    z-index: 2;
+}
+
+
+
+    code.language-css::before, code.language-xml::before, code.language-php-template::before, code.language-javascript::before{content:'</>';position:absolute; top:13px;left: 50%;color:#fff;opacity:.6;z-index:2;font-size:12px}
+    code.language-css::before{content:'CSS'}
+    code.language-xml::before{content:'HTML'}
+    code.language-php-template::before{content:'XML'}
+    code.language-javascript::before{content:'JavaScript'}
+
+
+    
+
+
+    
+    .precopy{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-ms-user-select:none;-moz-user-select:none;opacity:.6;transition: opacity linear 0.5s;position:absolute;right:0;z-index:2;top:0;background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='%23989b9f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><rect x='5.54615' y='5.54615' width='16.45385' height='16.45385' rx='4'></rect><path d='M171.33311,181.3216v-8.45385a4,4,0,0,1,4-4H183.787' transform='translate(-169.33311 -166.86775)'></path></g></svg>") 48px / 22px no-repeat;color:#fff;font-size:13px;border:none;line-height:2.2em;border-radius:0 4px 0 4px;padding:9px 45px 5px 8px}
+    .precopy:hover{opacity:1}
+    .precopy.copied{background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiBmb2N1c2FibGU9ImZhbHNlIiBkYXRhLXByZWZpeD0iZmFzIiBkYXRhLWljb249ImNoZWNrIiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtY2hlY2sgZmEtdy0xNiIgcm9sZT0iaW1nIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9IiYjMTA7ICAgIGNvbG9yOiAjMmFmZjMyOyYjMTA7Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xNzMuODk4IDQzOS40MDRsLTE2Ni40LTE2Ni40Yy05Ljk5Ny05Ljk5Ny05Ljk5Ny0yNi4yMDYgMC0zNi4yMDRsMzYuMjAzLTM2LjIwNGM5Ljk5Ny05Ljk5OCAyNi4yMDctOS45OTggMzYuMjA0IDBMMTkyIDMxMi42OSA0MzIuMDk1IDcyLjU5NmM5Ljk5Ny05Ljk5NyAyNi4yMDctOS45OTcgMzYuMjA0IDBsMzYuMjAzIDM2LjIwNGM5Ljk5NyA5Ljk5NyA5Ljk5NyAyNi4yMDYgMCAzNi4yMDRsLTI5NC40IDI5NC40MDFjLTkuOTk4IDkuOTk3LTI2LjIwNyA5Ljk5Ny0zNi4yMDQtLjAwMXoiLz48L3N2Zz4=') 68px / 17px no-repeat;border:none;line-height:2.2em;border-radius:0 4px 0 4px;padding:9px 45px 5px 8px}
+    button{cursor:pointer}
+    #cmHolder pre{margin-top:15px;font-size:.9em}
+    #cmHolder .hljs{display:block}
+    .fs-5a{font-size:1.1rem}
+    .navbar-brand a{color:#222}
+    .bg-gray {background:#d8dee5}
+    .rounded-b {border-radius:.23rem;margin-top:5px;}
+
+ 
+
+
+
+    .hljs
+    {
+    color: #cccccc;background:#2d303e;
+    }
+    .hljs-attr{color:#ec9151;}
+    .hljs-subst {color:#ccc;}
+    /* Death Star Comment */
+    .hljs-comment,
+    .hljs-quote
+    {
+    color: #999;font-style:italic;
+    }
+    /* Darth Vader */
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-tag,
+    .hljs-name,
+    .hljs-selector-id,
+    .hljs-selector-class,
+    .hljs-regexp,
+    .hljs-deletion
+    {
+    color: #e57767;
+    }
+    /* Threepio */
+    .hljs-number,
+    .hljs-built_in,
+    .hljs-literal,
+    .hljs-type,
+    .hljs-params,
+    .hljs-meta,
+    .hljs-link
+    {
+    color: #E7CE56;
+    }
+    /* Luke Skywalker */
+    .hljs-attribute
+    {
+    color: #EE7C2B;
+    }
+    /* Obi Wan Kenobi */
+    .hljs-string,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-addition
+    {
+    color: #99cc99;
+    }
+    /* Yoda */
+    .hljs-title,
+    .hljs-section
+    {
+    color: #6699cc;
+    }
+    /* Mace Windu */
+    .hljs-keyword,
+    .hljs-selector-tag
+    {
+    color: #cc99cc;
+    }
+    .hljs-emphasis
+    {
+    font-style: italic;
+    }
+    .hljs-strong
+    {
+    font-weight: bold;
+    }
+      
+        </style>
+
+<p><b>PRISM Default by Lea Verou</b></p>
+<pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kangismet/syntaxhighlighter@main/css/prism/PrismDefault.css"&gt;</code></pre>
+
+
+  <pre><code class="language-css">pre {
+  margin:15px 0;
+  padding:15px;clear:both;
+  background:#f2f2f2;
+  color:#666;
+  border:1px solid #ddd;
+  overflow:auto;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: .9rem;
+  }</code></pre>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js'></script>
+<script>hljs.highlightAll();</script>
+
+<script>/*<![CDATA[*/
+    let preTag = document.querySelectorAll("pre");
+    async function copyCode(e) {
+        const t = e.srcElement;
+        t.innerText = "Copied!";
+        let o = t.parentElement.querySelector("code").innerText;
+        await navigator.clipboard.writeText(o), t.classList.add("copied"), setTimeout((() => {
+            t.classList.remove("copied"), t.innerText = "Copy"
+        }), 1e3)
+    }
+    preTag.forEach((e => {
+        if (navigator.clipboard) {
+            let t = document.createElement("button");
+            t.classList.add("precopy"), t.innerText = "Copy", t.addEventListener("click", copyCode), e.appendChild(t)
+        }
+    }));
+    /*]]>*/</script>
