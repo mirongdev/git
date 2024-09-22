@@ -1,0 +1,230 @@
+<!-- Prism.js CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" id="prism-light"> <!-- Light mode -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" id="prism-dark" disabled> <!-- Dark mode -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet"/>
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+  :root {
+      --synxDot1: #f1645e;
+      --synxDot2: #eebd3e;
+      --synxDot3: #3cab4e;
+  }
+
+  /* Container for code block */
+  .code-container {
+      position: relative;
+      margin-bottom: 2em;
+  }
+
+  pre[class*="language-"] {
+      padding: 15px;
+      padding-top: 35px; /* Sesuaikan tinggi padding untuk menyesuaikan header */
+      border-radius: 10px;
+      overflow: auto;
+      font-size: 12pt;
+      line-height: 1.5;
+      margin-bottom: 1.5em;
+      font-family: 'Courier New', monospace;
+      position: relative;
+     
+  }
+
+
+
+  /* Header for code block */
+pre[class*="language-"]::before {
+    content: '';
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1f212a;
+    height: 35px; /* Sesuaikan tinggi header */
+    border-radius: 10px 10px 0 0;
+}
+
+/* Decorative dots in header */
+pre[class*="language-"]::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    display: flex;
+    gap: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--synxDot1);
+    box-shadow: 20px 0 0 var(--synxDot2), 40px 0 0 var(--synxDot3);
+}
+
+
+
+  /* Title in the middle of the header */
+  .code-title {
+      position: absolute;
+      top: 8px; /* Sesuaikan agar berada di tengah header */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px; /* Kecilkan sedikit font judul */
+      color: #fff;
+      opacity: 0.8;
+      z-index: 2;
+      white-space: nowrap;
+  }
+
+  /* Button container inside header */
+  .button-container {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      display: flex;
+      gap: 8px; /* Sesuaikan jarak antar tombol */
+      z-index: 2;
+  }
+
+  /* Copy button */
+  .precopy {
+      background-color: #323232;
+      color: #fff;
+      border: none;
+      padding: 3px 8px; /* Kecilkan padding tombol */
+      font-size: 0.75em; /* Sesuaikan ukuran font tombol */
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: background-color 0.3s ease, opacity 0.3s;
+      opacity: 0.8;
+  }
+
+  /* Hover state for copy button */
+  .precopy:hover {
+      opacity: 1;
+  }
+
+  /* Default icon for copy button */
+  .precopy i {
+      font-size: 14px; /* Kecilkan ukuran ikon */
+  }
+
+  /* Dark mode button */
+  .toggle-darkmode {
+      background-color: #323232;
+      color: #fff;
+      border: none;
+      padding: 3px 8px; /* Kecilkan padding tombol */
+      font-size: 0.75em; /* Sesuaikan ukuran font tombol */
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: background-color 0.3s ease, opacity 0.3s;
+  }
+
+  /* Dark mode icon */
+  .toggle-darkmode i {
+      font-size: 14px; /* Kecilkan ukuran ikon */
+  }
+
+  /* Dark mode styles for code */
+  body.dark-mode pre[class*="language-"] {
+      background-color: #2d2d2d;
+      color: #ccc;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 600px) {
+      /* Untuk tampilan mobile */
+      .button-container {
+          flex-direction: row; /* Tetap horizontal pada mobile */
+          top: 5px;
+          right: 10px;
+      }
+
+      .precopy, .toggle-darkmode {
+          font-size: 0.7em; /* Kecilkan font tombol pada perangkat mobile */
+          padding: 2px 6px; /* Kecilkan padding tombol */
+      }
+
+      .precopy span, .toggle-darkmode span {
+          display: none; /* Hilangkan teks di tombol pada perangkat mobile */
+      }
+
+      .precopy i, .toggle-darkmode i {
+          font-size: 18px; /* Perbesar sedikit ukuran ikon */
+      }
+
+      .code-title {
+          font-size: 11px; /* Kecilkan judul agar tidak tertutupi */
+      }
+  }
+
+  pre[class*="language-"].line-numbers {
+
+padding-left: 0;
+
+}
+</style>
+
+<!-- HTML Example -->
+<div class="code-container">
+    <div class="code-title"><h2 style="margin: 0px;">Contoh Kode JavaScript</h2></div>
+    <div class="button-container">
+        <button class="precopy"><i class="fas fa-copy"></i> <span>Salin Kode</span></button>
+        <button class="toggle-darkmode"><i class="fas fa-moon"></i> <span>Dark Mode</span></button>
+    </div>
+    <pre class="line-numbers language-javascript" data-language="JavaScript">
+      <code class="language-javascript">
+        // Example JavaScript Code
+        function helloWorld() {
+            console.log("Hello, World!");
+        }
+        helloWorld();
+      </code>
+    </pre>
+</div>
+
+<!-- Prism.js JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.precopy').forEach(button => {
+          button.addEventListener('click', function () {
+              const codeBlock = this.closest('.code-container').querySelector('code').textContent;
+              navigator.clipboard.writeText(codeBlock).then(() => {
+                  this.classList.add('copied');
+                  this.innerHTML = '<i class="fas fa-check"></i> <span>Copied</span>';
+                  setTimeout(() => {
+                      this.classList.remove('copied');
+                      this.innerHTML = '<i class="fas fa-copy"></i> <span>Salin Kode</span>';
+                  }, 1500);
+              });
+          });
+      });
+
+      document.querySelectorAll('.toggle-darkmode').forEach(button => {
+          button.addEventListener('click', function () {
+              const isDarkMode = document.body.classList.toggle('dark-mode');
+              const prismLight = document.getElementById('prism-light');
+              const prismDark = document.getElementById('prism-dark');
+
+              if (isDarkMode) {
+                  prismLight.disabled = true;
+                  prismDark.disabled = false;
+                  this.innerHTML = '<i class="fas fa-sun"></i> <span>Light Mode</span>';
+              } else {
+                  prismLight.disabled = false;
+                  prismDark.disabled = true;
+                  this.innerHTML = '<i class="fas fa-moon"></i> <span>Dark Mode</span>';
+              }
+          });
+      });
+  });
+</script>
