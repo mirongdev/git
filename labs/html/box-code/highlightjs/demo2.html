@@ -1,0 +1,110 @@
+<!-- <link
+  rel="stylesheet"
+  href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css"
+/> -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/androidstudio.css"/>
+
+<!-- https://github.com/highlightjs/highlight.js/tree/main/src/styles -->
+
+<style>
+    pre {user-select:all}
+    /* Custom Theme for highlight.js */
+
+/* .hljs {
+  display: block;
+  padding: 0.5em;
+  background: #f5f5f5;
+  color: #333;
+} */
+
+.hljs {
+  display: block;
+  padding: 0.5em;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.hljs-ln-n::before {
+    color: #7b7777;
+}
+hljs-ln-n{
+    color: #cc00bb;
+}
+
+
+.hljs-comment,
+.hljs-quote {
+  color: #777;
+  font-style: italic;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-name {
+  color: #007acc;
+}
+.hljs-attribute,
+.hljs-meta {
+  color: #f08d49;
+}
+.hljs-number,
+.hljs-regexp,
+.hljs-link {
+  color: #d36363;
+}
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst {
+  color: #50a14f;
+}
+.hljs-title,
+.hljs-section {
+  color: #4078f2;
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: bold;
+}
+</style>
+
+<pre><code class="language-javascript">
+    function helloWorld() {
+      console.log('Hello, world!');
+    }
+    </code></pre>
+
+    <h2>Python</h2>
+    <pre><code class="python">@requires_authorization
+def somefunc(param1=&#39;&#39;, param2=0):
+    r&#39;&#39;&#39;A docstring&#39;&#39;&#39;
+    if param1 &gt; param2: # interesting
+        print &#39;Gre\&#39;ater&#39;
+    return (param2 - param1 + 1 + 0b10l) or None
+
+class SomeClass:
+    pass
+
+&gt;&gt;&gt; message = &#39;&#39;&#39;interpreter
+... prompt&#39;&#39;&#39;
+</code></pre>
+
+
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/languages/javascript.min.js"></script>
+</script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js/dist/highlightjs-line-numbers.min.js"></script> -->
+
+<script>
+    hljs.highlightAll(); // initialize highlighting
+    hljs.initLineNumbersOnLoad(); // apply line numbering
+ </script>
