@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="icon" sizes="192x192" type="image/x-icon" href="https://sugeng.id/tools/images/sugeng-id-favicon-75x75.png">
+    <link rel="icon" sizes="32x32" type="image/x-icon" href="https://sugeng.id/tools/images/sugeng-id-favicon.png">
+    <title>Generator Kode HTML Menu Navigasi</title>
+    <meta name="description" content="Generator Kode HTML Menu Navigasi untuk template blogger premium dari Sugeng.id">
+    <link rel="stylesheet" href="https://sugeng.id/tools/style.css?ver=4.9.3">
+</head>
+
+<body>
+    <script>function darkModeButton() { let e = document.getElementById("darkmode-button").querySelector(".darkmode"); "darkmode" === localStorage.getItem("stylemode") ? e.checked = !0 : e.checked = !1, e.addEventListener("change", function () { "darkmode" === localStorage.getItem("stylemode") ? (localStorage.setItem("stylemode", "lightmode"), document.documentElement.removeAttribute("data-theme", "dark")) : (localStorage.setItem("stylemode", "darkmode"), document.documentElement.setAttribute("data-theme", "dark")) }) } !function () { var e = window.matchMedia("(prefers-color-scheme: dark)").matches, t = "darkmode" === localStorage.getItem("stylemode"), o = "lightmode" === localStorage.getItem("stylemode"); !e && !t || o ? (localStorage.setItem("stylemode", "lightmode"), document.documentElement.removeAttribute("data-theme", "dark")) : (localStorage.setItem("stylemode", "darkmode"), document.documentElement.setAttribute("data-theme", "dark")) }(), document.addEventListener("DOMContentLoaded", darkModeButton);</script>
+    <header id="header">
+        <div id="header-logo"><a href="/"><img alt="Sugeng.id" title="Template Blogger" src="images/sugeng.id-2024.png"
+                    width="120" height="40"></a></div>
+    </header>
+    <main id="wrapper" class="htmlmenu">
+        <h1 class="title">Generator Kode HTML Menu Navigasi</h1><span class="toggle-title">Keterangan</span> <a
+            class="toggle-btn-content" href="#"></a>
+        <div class="toggle-content hidden">
+            <div><strong>URL</strong> = Isi dengan URL tujuan (tujuan ketika menu diklik)<br><strong>Nama
+                    Menu/Submenu</strong> = Isi dengan judul menu<br><br>Jika ingin menunya diklik mengarah ke halaman
+                daftar postingan dengan label tertentu, isi URL dengan URL label.<br><br>Format URL label seperti ini
+                :<br><em>https://ALAMATBLOG.COM/search/label/NAMALABEL</em><br><br>Contoh
+                :<br><em>https://linkmagz.sugeng.id/search/label/Info</em></div>
+        </div>
+        <div class="section">
+            <div id="menu-input-field"><!-- default menu 1 -->
+                <div class="main-menu-outer">
+                    <div class="main-menu-inner"><input class="urlmenu" type="url" name="urlmenu"
+                            placeholder="URL"><input class="menuname" type="text" name="namamenu"
+                            placeholder="nama menu"> <button class="removemenu hidden"></button>
+                        <div class="link-attr"><label><input type="checkbox" name="link-attr"
+                                    class="rel small-checkbox"><span>NoFollow</span></label> <label><input
+                                    type="checkbox" name="link-attr" class="target small-checkbox"><span>Open in New
+                                    Tab</span></label></div>
+                    </div><button class="add-submenu-level1">submenu level 1</button>
+                </div><!-- default menu 2 -->
+                <div class="main-menu-outer">
+                    <div class="main-menu-inner"><input class="urlmenu" type="url" name="urlmenu"
+                            placeholder="URL"><input class="menuname" type="text" name="namamenu"
+                            placeholder="nama menu"> <button class="removemenu"></button>
+                        <div class="link-attr"><label><input type="checkbox" name="link-attr"
+                                    class="rel small-checkbox"><span>NoFollow</span></label> <label><input
+                                    type="checkbox" name="link-attr" class="target small-checkbox"><span>Open in New
+                                    Tab</span></label></div>
+                    </div><button class="add-submenu-level1">submenu level 1</button>
+                </div><!-- default menu 3 -->
+                <div class="main-menu-outer">
+                    <div class="main-menu-inner"><input class="urlmenu" type="url" name="urlmenu"
+                            placeholder="URL"><input class="menuname" type="text" name="namamenu"
+                            placeholder="nama menu"> <button class="removemenu"></button>
+                        <div class="link-attr"><label><input type="checkbox" name="link-attr"
+                                    class="rel small-checkbox"><span>NoFollow</span></label> <label><input
+                                    type="checkbox" name="link-attr" class="target small-checkbox"><span>Open in New
+                                    Tab</span></label></div>
+                    </div><button class="add-submenu-level1">submenu level 1</button>
+                </div><button id="add-main-menu">menu utama</button>
+            </div>
+        </div>
+        <div class="section"><button type="button" id="submit" class="primary-button submit"><span>Buat
+                    Kode</span></button> <span class="error-box"></span></div>
+        <div class="section html-output"><label class="output-code-title" for="output-code">KODE MENU</label> <textarea
+                id="output-code" onclick="this.select();"></textarea></div><span class="toggle-title">Cara Pemasangan
+            Kode</span> <a class="toggle-btn-content" href="#"></a>
+        <div class="toggle-content hidden" style="margin-bottom:0">
+            <div>
+                <ol>
+                    <li>Salin kode menu di atas</li>
+                    <li>Masuk ke menu "Tata Letak" > edit widget "Kode Menu Navigasi"</li>
+                    <li>Letakkan kodenya di bagian "Konten" widget.</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div id="darkmode-button"><label class="darkmode-label"><input name="darkmode" id="darkmode" class="darkmode"
+                    type="checkbox"> <span>Darkmode</span></label></div>
+        <div id="footer-info"><span>Powered by <a href="https://sugeng.id" title="Template Blogger Premium"
+                    target="_blank">Sugeng.id</a></span><br><span class="version">v.4.9.3 2024</span></div>
+    </footer>
+    <script>!function () { var e = document.querySelectorAll(".toggle-content"); Array.from(e).forEach(function (e) { let t = e.previousElementSibling; e.classList.contains("hidden") ? (t.innerHTML = "(lihat)", e.style.height = "0px") : (t.innerHTML = "(tutup)", e.style.height = e.scrollHeight + "px") }) }(), document.addEventListener("click", function (e) { let t, l = e.target; l.classList.contains("toggle-btn-content") && (t = l.nextElementSibling, e.preventDefault(), t.classList.contains("hidden") ? (l.innerHTML = "(tutup)", t.classList.remove("hidden"), t.style.height = t.scrollHeight + "px") : (l.innerHTML = "(lihat)", t.classList.add("hidden"), t.style.height = "0px")) }), window.addEventListener("resize", function () { var e = document.querySelectorAll(".toggle-content"); Array.from(e).forEach(function (e) { e.classList.contains("hidden") || (e.previousElementSibling.innerHTML = "(lihat)", e.classList.add("hidden"), e.style.height = "0px") }) }), function () { let e = document.querySelector(".html-output"); if (e && navigator.clipboard) { let l = document.createElement("button"), n = document.createElement("span"); var t = document.createTextNode(" Salin"); l.classList.add("copy-btn"), n.classList.add("icon-copy"), l.setAttribute("aria-label", "copy-btn"), l.appendChild(n), l.appendChild(t), e.appendChild(l), l.addEventListener("click", function () { let t = e.querySelector("textarea"); navigator.clipboard.writeText(t.value), this.classList.add("copied"), t.select(), setTimeout(() => { this.classList.remove("copied") }, 1500) }) } }(); const messages = { invalidURL: "<p>URL tidak valid: harus pakai https://</p>", checkBoxSosmed: "<p>Silakan pilih Sosial Media</p>" }, helperFn = { checkURL: e => /^(http(s)?:\/\/)/g.test(e), getVal: e => "checkbox" === (e = document.querySelector(e)).getAttribute("type") ? e.checked : e.value, getValRadio(e) { let t; return e = document.querySelectorAll(e), Array.from(e).forEach(function (e) { e.checked && (t = e.value) }), t }, setKeyValArr(e, t) { t = document.querySelectorAll(t); let l = "\t" + e + ": [\n"; return Array.from(t).forEach(function (e) { "" != e.value && (l += '\t\t"' + e.value + '",\n') }), l += "\t],\n" }, setKeyVal(e, t) { let l = "\t" + e + " : "; return "boolean" == typeof (t = this.getVal(t)) ? l += t + ",\n" : "string" == typeof t && (l += '"' + t.replace(/\"/g, "'") + '",\n'), l }, lineToBr: (e, t) => document.getElementById(t).checked ? e.replace(/(?:\r\n|\r|\n)/g, "<br/>\n") : e, setAttributes(e, t) { for (var l in t) e.setAttribute(l, t[l]) }, inputToggle(e) { if (e.target.classList.contains("input-toggle")) { let t = e.target.parentElement.lastElementChild; !0 === e.target.checked ? (t.style.height = t.scrollHeight + "px", t.classList.remove("hidden")) : (t.firstChild.value = "", t.style.height = null, t.classList.add("hidden")) } }, addInput({ parent: e, elm: t, placeholder: l, type: n, name: r, max: a }) { a = a || 6; let i = document.createElement("div"); i.setAttribute("class", "new-input"); let u = document.createElement("input"); u.setAttribute("type", n), u.setAttribute("placeholder", l), u.setAttribute("name", r); let s = document.createElement("button"); s.setAttribute("class", "remove"), s.setAttribute("type", "button"), i.appendChild(u), i.appendChild(s), t.appendChild(i), t.childNodes.length >= a && (t.nextElementSibling.disabled = !0, t.nextElementSibling.style.cssText = "opacity:.3;cursor:not-allowed"), e.style.height = e.scrollHeight + "px" }, removeInput({ elm: e, target: t, max: l }) { if (l = l || 6, "remove" === t.className) { --l; let r = t.parentElement.parentNode; var n = t.parentElement.getBoundingClientRect().height; t.parentElement.remove(), e.style.height = e.getBoundingClientRect().height - n + "px", r.childNodes.length <= l && (r.nextElementSibling.disabled = !1, r.nextElementSibling.style.cssText = "opacity:1;cursor:pointer;") } } }; !function (e) { let t = e.getElementById("output-code"), l = e.querySelector("#menu-input-field"), n = e.getElementById("submit"), r = e.querySelector(".error-box"); function a(t, l) { let n = e.createElement("label"), r = e.createElement("input"), a = e.createElement("span"); return l = e.createTextNode(l), r.setAttribute("type", "checkbox"), r.setAttribute("class", t), r.setAttribute("name", "link-attr"), a.appendChild(l), n.appendChild(r), n.appendChild(a), n } function i() { let t = e.createElement("div"); return t.classList.add("clearfix"), t } function u() { let t = e.createElement("div"); t.classList.add("link-attr"); var l = a("rel small-checkbox", "NoFollow"), n = a("target small-checkbox", "Open in New Tab"); return t.appendChild(l), t.appendChild(n), t } function s(t) { var l = e.createElement("input"); return helperFn.setAttributes(l, { type: "url", name: "url" + t, placeholder: "URL", class: "url" + t }), l } function c(t) { var l = e.createElement("input"); return helperFn.setAttributes(l, { type: "text", name: t + "name", placeholder: "nama " + t, class: t + "name" }), l } function d(t) { var l = e.createElement("button"); return helperFn.setAttributes(l, { type: "button", class: "remove" + t }), l } function o(t, l) { let n = e.createElement("button"); return helperFn.setAttributes(n, { class: t, value: l }), n.innerText = l, n } e.addEventListener("click", function (t) { if ("add-main-menu" === t.target.id) { let a = t.target.parentElement, m = e.createElement("div"), p = e.createElement("div"); m.setAttribute("class", "main-menu-outer"), p.setAttribute("class", "main-menu-inner"); var l = s("menu"), n = c("menu"), r = d("menu"); t = o("add-submenu-level1", "submenu level 1"); p.appendChild(l), p.appendChild(n), p.appendChild(r), p.appendChild(i()), p.appendChild(u()), m.appendChild(p), m.appendChild(t), a.insertBefore(m, a.lastElementChild) } }), e.addEventListener("click", function (t) { if ("add-submenu-level1" === t.target.className) { let a = t.target.parentElement, m = e.createElement("div"), p = e.createElement("div"); m.setAttribute("class", "submenu-level1-outer"), p.setAttribute("class", "submenu-level1-inner"); var l = s("submenu"), n = c("submenu"), r = d("submenu"); t = o("add-submenu-level2", "submenu level 2"); p.appendChild(l), p.appendChild(n), p.appendChild(r), p.appendChild(i()), p.appendChild(u()), m.appendChild(p), m.appendChild(t), a.insertBefore(m, a.lastElementChild) } }), e.addEventListener("click", function (t) { if ("add-submenu-level2" === t.target.className) { let r = t.target.parentElement, a = e.createElement("div"), i = e.createElement("div"); a.setAttribute("class", "submenu-level2-outer"), i.setAttribute("class", "submenu-level2-inner"); var l = s("subsubmenu"), n = c("subsubmenu"); t = d("subsubmenu"); i.appendChild(l), i.appendChild(n), i.appendChild(t), i.appendChild(u()), a.appendChild(i), r.insertBefore(a, r.lastElementChild) } }), e.addEventListener("click", function (e) { let t = e.target; "removemenu" != t.className && "removesubmenu" != t.className && "removesubsubmenu" != t.className || t.parentElement.parentElement.remove() }), n.addEventListener("click", function () { var n = e.querySelectorAll(".main-menu-outer"), a = l.querySelectorAll("input[type=url]"); let i = [], u = ""; if (Array.from(a).forEach(function (e) { "" === e.value || helperFn.checkURL(e.value) ? e.classList.remove("error") : (i.push("Error"), e.classList.add("error")) }), 0 < i.length) return r.innerHTML = messages.invalidURL, void (e.getElementById("output-code").value = ""); r.innerHTML = "", Array.from(n).forEach(function (e) { let t = e.querySelector(".main-menu-inner "); var l = e.querySelectorAll(".submenu-level1-outer"), n = t.lastElementChild.querySelector(".rel"); e = t.lastElementChild.querySelector(".target"); let r = t.querySelector(".urlmenu"), a = t.querySelector(".menuname"); u += 0 < l.length ? '<li class="has-sub">' : "<li>", r = "" != r.value ? r.value : "#", a = "" != a.value ? a.value : "Menu", r.replace(/\s/g, "%20"), a = a.replace(/(<([^>]+)>)/gi, ""), n = n.checked ? ' rel="nofollow"' : "", e = e.checked ? ' target="_blank"' : "", u += '<a href="' + r + '"' + n + e + ">" + a + "</a>", 0 < l.length && (u += "\n\t<ul>", Array.from(l).forEach(function (e) { let t = e.querySelector(".submenu-level1-inner "); var l = e.querySelectorAll(".submenu-level2-outer"), n = t.lastElementChild.querySelector(".rel"); e = t.lastElementChild.querySelector(".target"); let r = t.querySelector(".urlsubmenu"), a = t.querySelector(".submenuname"); u += 0 < l.length ? '\n\t<li class="has-sub">' : "\n\t<li>", r = "" != r.value ? r.value : "#", a = "" != a.value ? a.value : "SubMenu", r.replace(/\s/g, "%20"), a = a.replace(/(<([^>]+)>)/gi, ""), n = n.checked ? ' rel="nofollow"' : "", e = e.checked ? ' target="_blank"' : "", u += '<a href="' + r + '"' + n + e + ">" + a + "</a>", 0 < l.length && (u += "\n\t\t<ul>", Array.from(l).forEach(function (e) { let t = e.querySelector(".submenu-level2-inner "); var l = t.lastElementChild.querySelector(".rel"); e = t.lastElementChild.querySelector(".target"); let n = t.querySelector(".urlsubsubmenu"), r = t.querySelector(".subsubmenuname"); u += "\n\t\t<li>", n = "" != n.value ? n.value : "#", r = "" != r.value ? r.value : "SubSubMenu", n.replace(/\s/g, "%20"), r = r.replace(/(<([^>]+)>)/gi, ""), l = l.checked ? ' rel="nofollow"' : "", e = e.checked ? ' target="_blank"' : "", u += '<a href="' + n + '"' + l + e + ">" + r + "</a></li>" }), u += "\n\t\t</ul>\n\t"), u += "</li>" }), u += "\n\t</ul>\n"), u += "</li>\n" }), t.value = u }), e.addEventListener("focusin", function (e) { e.target.classList.contains("error") && e.target.classList.remove("error") }) }(document);</script>
+</body>
+
+</html>
